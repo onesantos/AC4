@@ -1,0 +1,19 @@
+[tool.poetry]
+name = "ac4"
+version = "0.1.0"
+description = ""
+authors = ["carlos.rian <carlos.rian@quartile.com>"]
+
+[tool.poetry.dependencies]
+python = "^3.8"
+Flask = "^1.1.2"
+Flask-SQLAlchemy = "^2.5.1"
+flask-marshmallow = "^0.14.0"
+marshmallow-sqlalchemy = "^0.25.0"
+
+[tool.poetry.dev-dependencies]
+pylint = "^2.8.2"
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
