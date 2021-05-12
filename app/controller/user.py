@@ -4,12 +4,22 @@ from app.model.serializer import SerialUser
 
 serial_user = SerialUser()
 
+
 def get_user_by_username(username):
-    user = User.query.filter_by(username=username).first()
+    user = (
+        User.query.with_entities(User.username, User.id, User.email, User.name)
+        .filter_by(username=username)
+        .first()
+    )
     return serial_user.dump(user)
 
+
 def get_user_by_username_dict(username) -> User:
-    user = User.query.filter_by(username=username).first()
+    user = (
+        User.query.with_entities(User.username, User.id, User.email, User.name)
+        .filter_by(username=username)
+        .first()
+    )
     return user
 
 
